@@ -8,7 +8,13 @@ import { StorageService } from "../storage.service";
 @Injectable()
 export class ClienteService{
     constructor(public http: HttpClient, public storage: StorageService){
+ 
+        
+    }
 
+    
+    findById(id: string) {
+        return this.http.get(`${API_CONFIG.baseURL}/clientes/${id}` );
     }
 
     findByEmail(email: string) {
